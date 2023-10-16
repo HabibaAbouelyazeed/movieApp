@@ -1,0 +1,8 @@
+.container h2{
+    margin: 62px 0 32px;
+}
+.card{
+    width: 18%;
+    height: 100px;
+    background-color: brown;
+}
