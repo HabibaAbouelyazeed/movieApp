@@ -13,12 +13,8 @@ import { WatchListComponent } from './watch-list/watch-list.component';
   declarations: [
     MovieListComponent,
     MovieDetailsComponent,
-<<<<<<< HEAD
-    WishlistComponent,
-    MoviecardComponent
-=======
-    WatchListComponent
->>>>>>> bceb48bda2b32a758a1abf72c494825da8f6adec
+    MoviecardComponent,
+    WatchListComponent,
   ],
   imports: [
     CommonModule,
