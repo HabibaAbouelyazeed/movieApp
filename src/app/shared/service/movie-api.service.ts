@@ -14,5 +14,18 @@ export class MovieApiService {
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`; 
     return this.httpClient.get<Movie[]>(apiUrl);
   }
+
+
+  getDetails (id: string) {
+    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/movie/${id}?api_key=a7e6cb75206ba0212cfd560483d20ab1`)
+  }
+
+  
+  getRecomendation (id: string) {
+    return this.httpClient.get<any>(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=a7e6cb75206ba0212cfd560483d20ab1
+    `)
+  }
+  // https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}
+
 }
 

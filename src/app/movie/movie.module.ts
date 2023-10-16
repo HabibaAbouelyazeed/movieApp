@@ -6,6 +6,8 @@ import { MoviecardComponent } from './moviecard/moviecard.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { WatchListComponent } from './watch-list/watch-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +22,18 @@ import { WatchListComponent } from './watch-list/watch-list.component';
     CommonModule,
     AppRoutingModule,
     FontAwesomeModule,
-  ]
+    HttpClientModule,FormsModule,
+  ],
+  exports: [
+    MovieListComponent,
+    MovieDetailsComponent,
+    MoviecardComponent,
+    WatchListComponent,
+    ],
 })
+
+
 export class MovieModule { }
+
+
+
