@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {faStar, faHeart} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-watch-list',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./watch-list.component.css']
 })
 export class WatchListComponent {
-
+  faStar = faStar;
+  faHeart = faHeart
 }
