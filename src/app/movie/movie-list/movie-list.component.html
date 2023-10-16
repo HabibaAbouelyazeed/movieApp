@@ -1,13 +1,14 @@
 <div class="container">
+    <div class="container header-container">
+        <h1>Welcome to our movie app</h1>
+        <p>Millions of movies, TV shows and people to discover. Explore now.</p>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search and explore" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </div>
     <h2>Popular Movies</h2>
     <div class="movie-container">
-
-        <div class="card" *ngFor="let movie of movies">
-            <img [src]= "" class="card-img-top">
-            <div class="card-body">
-                <h3 class="card-text">{{movie.original_title}}</h3>
-            </div>
-        </div>
+           <app-moviecard [movie]="movie" *ngFor="let movie of movies"></app-moviecard>
     </div>
-
 </div>

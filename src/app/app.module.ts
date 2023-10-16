@@ -10,9 +10,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// import { MovieApiService } from './shared/service/movie-api.service';
+import { MovieApiService } from './shared/service/movie-api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MoviecardComponent } from './moviecard/moviecard.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { MoviecardComponent } from './moviecard/moviecard.component';
     HeaderComponent,
     FooterComponent,
     NotFoundPageComponent,
-    MoviecardComponent
+    
   ],
   imports: [
     BrowserModule,

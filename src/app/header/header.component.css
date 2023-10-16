@@ -14,28 +14,9 @@
     display: flex;
     align-items: center;
     font-weight: 400;
+    margin-right: 35px;
 }
 .fa-heart{
     font-weight: bold;
 }
-.header-container{
-    padding: 37px 47px;
-    margin-top: 21px;
-    background-color: rgba(243, 241, 241, 1);
-}
-.header-container h1{
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 38.73px;
-}
-.header-container p{
-    padding: 35px 0 16px;
-}
-.header-container .btn{
-    background-color: rgba(255, 227, 83, 1);
-    color: black;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 16.94px;
-    border: none;
-}
+
