@@ -3,27 +3,27 @@ import { BehaviorSubject } from 'rxjs';
 import { Movie } from '../interface/movie';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class WishlistService {
-  private wishlist = new BehaviorSubject<Movie[]>([]);
+export class WatchlistService {
+  private watchlist = new BehaviorSubject<Movie[]>([]);
 
   constructor() {}
 
   getWishlist() {
-    return this.wishlist.asObservable();
+    return this.watchlist.asObservable();
   }
 
-  toggleWishlist(movieItem: Movie, newWishlist: Movie[]) {
+  toggleWishlist(movieItem: Movie, newWatchlist: Movie[]) {
     //movie exist in wishlist?
-    if ( newWishlist.filter((elem) => {elem.id === movieItem.id; }).length > 0) {
+    if ( newWatchlist.filter((elem) => {elem.id === movieItem.id; }).length > 0) {
       movieItem.wishlist = false;
-      newWishlist = this.removeMovie(movieItem, newWishlist);
+      newWatchlist = this.removeMovie(movieItem, newWatchlist);
     } else {
       movieItem.wishlist = true;
-      newWishlist.push(movieItem);
+      newWatchlist.push(movieItem);
     }
-    this.wishlist.next(newWishlist);
+    this.watchlist.next(newWatchlist);
   }
 
   removeMovie(movieItem: Movie, newWishlist: Movie[]) {
