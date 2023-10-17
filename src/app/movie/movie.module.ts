@@ -7,6 +7,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { WatchListComponent } from './watch-list/watch-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,14 +16,22 @@ import { HttpClientModule } from '@angular/common/http';
     MovieListComponent,
     MovieDetailsComponent,
     MoviecardComponent,
-    WatchListComponent,
-
+    WatchListComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+    FormsModule,
+  ],
+  exports: [
+    MovieListComponent,
+    MovieDetailsComponent,
+    MoviecardComponent,
+    WatchListComponent,
+  ],
 })
+
+
 export class MovieModule { }

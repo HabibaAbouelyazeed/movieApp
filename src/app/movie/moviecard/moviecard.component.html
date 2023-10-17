@@ -1,4 +1,4 @@
-<div class="card" >
+<div class="card" (click)="sendIdToDetails(movie.id)">
     <img [src]="environment.imgurl + movie.poster_path" class="card-img-top">
     <div class="overlay"><p><a [routerLink]="['/details', movie.id]">Show details...</a></p></div>
     <div class="card-body">
