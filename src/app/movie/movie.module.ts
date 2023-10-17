@@ -6,6 +6,7 @@ import { MoviecardComponent } from './moviecard/moviecard.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { WatchListComponent } from './watch-list/watch-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,17 +14,15 @@ import { WatchListComponent } from './watch-list/watch-list.component';
   declarations: [
     MovieListComponent,
     MovieDetailsComponent,
-<<<<<<< HEAD
-    WishlistComponent,
-    MoviecardComponent
-=======
-    WatchListComponent
->>>>>>> bceb48bda2b32a758a1abf72c494825da8f6adec
+    MoviecardComponent,
+    WatchListComponent,
+
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     FontAwesomeModule,
+    HttpClientModule
   ]
 })
 export class MovieModule { }

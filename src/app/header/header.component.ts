@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { WatchListComponent } from '../movie/watch-list/watch-list.component';
+
 
 @Component({
   selector: 'app-header',
@@ -8,4 +10,5 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   faHeart = faHeart;
+  
 }

@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-     <a class="navbar-brand" href="#">Movie App</a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <fa-icon [icon]="faHeart"></fa-icon> Watchlist
-    </div>
+        <a class="navbar-brand" href="#">Movie App</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn" routerLink="/watchlist">
+                Watchlist
+                <fa-icon [icon]="faHeart" class="ms-1"></fa-icon>
+            </button>
+        </div>
     </div>
 </nav>
-

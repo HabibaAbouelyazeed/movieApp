@@ -1,7 +1,9 @@
 <div class="card" >
     <img [src]="environment.imgurl + movie.poster_path" class="card-img-top">
+    <div class="overlay"><p><a [routerLink]="['/details', movie.id]">Show details...</a></p></div>
     <div class="card-body">
         <h6 class="card-text">{{movie.title}}</h6>
-        <p>{{movie.release_date | date}} </p>
+        <p>{{movie.release_date | date}} <span><fa-icon [icon]="faHeart"></fa-icon></span></p>
+
     </div>
 </div>

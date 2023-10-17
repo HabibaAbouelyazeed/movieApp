@@ -8,5 +8,5 @@ import {faStar, faHeart} from '@fortawesome/free-solid-svg-icons'
 })
 export class WatchListComponent {
   faStar = faStar;
-  faHeart = faHeart
+  faHeart = faHeart;
 }
