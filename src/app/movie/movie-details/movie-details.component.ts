@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+<<<<<<< HEAD
+=======
+import { Movie } from 'src/app/shared/interface/movie';
+>>>>>>> 3e1ccc5cf43a7464dbc4084194ca8077cba530d8
 import { MovieApiService } from 'src/app/shared/service/movie-api.service';
 
 @Component({
@@ -26,6 +30,7 @@ export class MovieDetailsComponent {
       
       
   }
+<<<<<<< HEAD
 //this.details=data
 //console.log( data)
 // console.log( data.results)
@@ -33,6 +38,9 @@ export class MovieDetailsComponent {
 
 // this.recomendation
 
+=======
+  
+>>>>>>> 3e1ccc5cf43a7464dbc4084194ca8077cba530d8
 genres = [{ "id": 28, "name": "Action" },
 { "id": 12, "name": "Adventure" }, { "id": 16, "name": "Animation" }, { "id": 35, "name": "Comedy" },
 { "id": 80, "name": "Crime" }, { "id": 99, "name": "Documentary" }, { "id": 18, "name": "Drama" }, 
@@ -47,3 +55,8 @@ funfun(id:number){
 
 }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3e1ccc5cf43a7464dbc4084194ca8077cba530d8

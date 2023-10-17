@@ -1,0 +1,11 @@
+<div class="card" (click)="sendIdToDetails(movie.id)">
+    <figure>
+        <img [src]="environment.imgurl + movie.poster_path" class="card-img-top">
+        <div class="overlay"><p><a [routerLink]="['/details', movie.id]">Show details...</a></p></div>
+    </figure>
+    <div class="card-body">
+        <h6 class="card-text">{{movie.title}}</h6>
+        <p>{{movie.release_date | date}} <button class="btn" (click)="handleButtonClick()" [routerLink]=""WatchListComponent><fa-icon [icon]="faHeart"></fa-icon></button></p>
+
+    </div>
+</div>

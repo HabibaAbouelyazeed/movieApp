@@ -1,0 +1,25 @@
+.navbar{
+    background-color: rgba(255, 227, 83, 1);
+    display: flex;
+}
+.navbar-brand,.navbar-collapse{
+    font-size: 15px;
+    line-height: 18.15px;
+}
+.navbar-brand{
+    font-weight: 700;
+}
+.navbar-collapse{
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    margin-right: 35px;
+}
+.fa-heart{
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+
