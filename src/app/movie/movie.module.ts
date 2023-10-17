@@ -6,6 +6,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 
+
 @NgModule({
   declarations: [
     MovieListComponent,
@@ -14,6 +15,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+
 })
 export class MovieModule { }

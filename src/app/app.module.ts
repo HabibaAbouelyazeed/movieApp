@@ -9,6 +9,9 @@ import { MovieModule } from './movie/movie.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    MovieModule
+    MovieModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
