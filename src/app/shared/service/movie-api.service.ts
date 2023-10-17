@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../interface/movie';
@@ -8,6 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class MovieApiService {
 
+<<<<<<< HEAD
+  constructor(private http: HttpClient) { }
+
+
+=======
   constructor(private httpClient: HttpClient) { }
   getMovieList() {
     const api_key= environment.apiKey;
@@ -25,6 +31,7 @@ export class MovieApiService {
     return this.httpClient.get<any>(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=a7e6cb75206ba0212cfd560483d20ab1`)
   }
   // https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}
+>>>>>>> 3e1ccc5cf43a7464dbc4084194ca8077cba530d8
 
 }
 
