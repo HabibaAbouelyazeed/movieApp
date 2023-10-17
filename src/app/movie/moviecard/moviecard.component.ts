@@ -2,6 +2,7 @@ import { Component, Input, OnInit, } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { WatchlistService } from 'src/app/shared/service/watchlist.service';
 
 @Component({
   selector: 'app-moviecard',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./moviecard.component.css'],
 })
 export class MoviecardComponent implements OnInit {
-  constructor(private router: Router,){}
+  constructor(private router: Router,private watchlistService: WatchlistService){}
     
   faHeart = faHeart;
   environment = environment;
@@ -19,7 +20,11 @@ export class MoviecardComponent implements OnInit {
   sendIdToDetails(id: number) {
     console.log(id);
     this.router.navigate(['details', id])
-
+  };
+  
+  handleButtonClick() {
+    this.watchlistService.toggleWishlist(this.movie, this.watchlistService.getWatchlist());
   }
+  
 }
 

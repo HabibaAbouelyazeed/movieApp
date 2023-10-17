@@ -13,6 +13,9 @@ export class WatchlistService {
   getWishlist() {
     return this.watchlist.asObservable();
   }
+  getWatchlist(): Movie[] {
+    return this.watchlist.getValue();
+  }
 
   toggleWishlist(movieItem: Movie, newWatchlist: Movie[]) {
     //movie exist in wishlist?
