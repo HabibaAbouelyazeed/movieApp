@@ -4,6 +4,8 @@ import { Movie } from 'src/app/shared/interface/movie';
 import { MovieApiService } from 'src/app/shared/service/movie-api.service';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { WatchlistService } from 'src/app/shared/service/watchlist.service';
+import {faStar} from '@fortawesome/free-solid-svg-icons'
+
 
 @Component({
   selector: 'app-movie-details',
@@ -11,8 +13,9 @@ import { WatchlistService } from 'src/app/shared/service/watchlist.service';
   styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent {
+  faStar = faStar;
   details!: any;
-  recomendation!: any;
+  recommendations!: any;
   faHeart = faHeart;
   watchlist !: Movie[];
 
@@ -25,9 +28,10 @@ export class MovieDetailsComponent {
   ngOnInit() {
     console.log(this.activatedRoute.snapshot);
     console.log(this.activatedRoute.snapshot.params);
-    this.movieApiService.getDetails(this.activatedRoute.snapshot.params['id']).subscribe((data) => (this.details = data));
+    this.movieApiService.getDetails(this.activatedRoute.snapshot.params
+      ['id']).subscribe((data) => (this.details = data));
 
-      this.movieApiService.getRecomendation(this.activatedRoute.snapshot.params['id']).subscribe((data) =>this.recomendation=data.results );
+      this.movieApiService.getRecomendation(this.activatedRoute.snapshot.params['id']).subscribe((data) =>this.recommendations=data.results );
       
       this.watchListService.getWatchlist().subscribe(
         (data) => this.watchlist = data,

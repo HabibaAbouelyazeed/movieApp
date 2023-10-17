@@ -16,59 +16,70 @@
                       </button>
                 </div>
                 <p class="text-muted "> {{details.release_date| date:'mediumDate'}} </p>
-                <div class="d-flex pt-3">
-                    <p class="card-text" style="margin-right:15px">star</p>
+
+               <div class="d-flex pt-3 align-items-center  ">
+                    <div class="rating d-flex me-5">
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'star': details.vote_average>1}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'star': details.vote_average>3}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'star':details.vote_average>5}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'star':details.vote_average>7}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'star':details.vote_average>9}"></fa-icon> </span>
+                    </div>
                     <span>{{details.vote_count}}</span>
                 </div>
 
                 <p class="card-text pt-3 ">{{details.overview}} </p>
 
                 <div class="d-flex py-4">
-                    <a class="text-dark bg-warning px-4 me-5 " style="border-radius:15px ">
-                        Action</a>
-                    <a class=" text-dark bg-warning px-4 me-5 " style="border-radius:15px ">
-                        Crime</a>
-                    <a class="text-dark bg-warning px-4 me-5 " style="border-radius:15px; ">Thriller
-                    </a>
-                </div>
+                    <a *ngFor=" let item of details.genres" class="text-dark bg-warning py-1 px-4 me-2 "
+                    style="border-radius:15px ">
+                    {{item.name}}</a>
+            </div>
                 <div class="d-flex pb-4">
                     <div class="d-flex align-items-center me-5">
-                        <h4 class="me-3">popularity</h4>
-                        <span>{{details.popularity}}</span>
+                        <h4 class="me-3">Duration:</h4>
+                        <h6>{{details.runtime}} Min</h6>
                     </div>
+
+
+                    
                     <div class="d-flex  align-items-center">
-                        <h4 class="me-3">Languages</h4>
-                        <span>{{details.original_language}}</span>
+                        <h4 class="me-3">Languages:</h4>
+                        <h6>{{details.original_language |uppercase}}</h6>
                     </div>
 
                 </div>
-                <div class="pb-3">Marvel Studios</div>
-                <a class=" px-4 btn border-warning" style="border-radius:20px;">Website</a>
+                <div class="pb-5">
+                    <span *ngFor=" let item of details.production_companies">
+                        <img class="rounded float-right w-25 me-4" *ngIf="item.logo_path"
+                            src="https://image.tmdb.org/t/p/w500{{item.logo_path}}"></span>
+                </div>
+                <a class=" px-4 btn border-warning" style="border-radius:20px;" href={{details.homepage}}>Website</a>
             </div>
         </div>
     </div>
 </section>
-<!-- slice:0:6; let i = index;" -->
 
 <section class=" py-5">
-    <div class="container  divIcon">
+    <div class="container  divIcon" *ngIf="recommendations!=''">
         <h2 class="mb-3">Recommendations</h2>
         <div class="d-flex ">
-            <div class="card-deck col-2" *ngFor="let card of recomendation.slice(0,6)">
-                <div class="me-3" >
-                    <div class=" card-body" >
-                        <div >
-                            <img src="https://image.tmdb.org/t/p/w500{{card.poster_path}}" style="border-radius: 15px;"
-                             class=" img-fluid"
-                            >
+            <div class="card-deck col-2" *ngFor="let item of recommendations.slice(0,6)">
+                <div class=" card me-3 border-0">
+                    <div class=" card-body">
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w500{{item.poster_path}}" style="border-radius: 15px;"
+                                class=" img-fluid mb-2">
                         </div>
-                        <span class="icon ">{{card.vote_average}}</span>
-                        <h6 class="mt-3">{{card.title}}</h6>
-                        <p class="text-muted">{{card.release_date | date:'mediumDate'}}</p>
+                        <span class="icon ">{{item.vote_average}}</span>
+                        <h6 class="mt-2">{{item.title}}</h6>
+                        <p class="text-muted">{{item.release_date | date:'mediumDate'}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 

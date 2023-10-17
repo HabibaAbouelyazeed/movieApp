@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card" (click)="sendIdToDetails(movie.id)">
   <figure>
     <img [src]="environment.imgurl + movie.poster_path" class="card-img-top" />
     <div class="overlay">
-      <p><a (click)="sendIdToDetails(movie.id)">Show details...</a></p>
+      <p><a >Show details...</a></p>
     </div>
   </figure>
   <div class="card-body">
