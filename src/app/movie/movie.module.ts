@@ -20,11 +20,6 @@ import { FormsModule } from '@angular/forms';
     WatchListComponent
   ],
   imports: [
-<<<<<<< HEAD
-    CommonModule
-  ],
-
-=======
     CommonModule,
     AppRoutingModule,
     FontAwesomeModule,
@@ -37,7 +32,6 @@ import { FormsModule } from '@angular/forms';
     MoviecardComponent,
     WatchListComponent,
   ],
->>>>>>> 3e1ccc5cf43a7464dbc4084194ca8077cba530d8
 })
 
 

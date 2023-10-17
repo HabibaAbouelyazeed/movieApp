@@ -11,9 +11,7 @@
       {{ movie.release_date | date }}
       <button class="btn" (click)="toggleWatchList()">
         <fa-icon
-          [icon]="faHeart"
-          [ngClass]="{ watchListed: movie.watchlist }"
-        ></fa-icon>
+          [icon]="faHeart" [ngClass]="{ watchListed: movie.watchlist }"></fa-icon>
       </button>
     </p>
   </div>

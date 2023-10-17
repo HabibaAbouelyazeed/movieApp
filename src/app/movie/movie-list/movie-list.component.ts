@@ -9,9 +9,6 @@ import { Movie } from 'src/app/shared/interface/movie';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
-<<<<<<< HEAD
-export class MovieListComponent {
-=======
 export class MovieListComponent {
   
   constructor(private movieApiService: MovieApiService) {}
@@ -22,4 +19,3 @@ export class MovieListComponent {
     });
   }
 }
->>>>>>> 3e1ccc5cf43a7464dbc4084194ca8077cba530d8
