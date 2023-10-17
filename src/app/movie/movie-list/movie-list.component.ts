@@ -15,7 +15,6 @@ export class MovieListComponent {
   ngOnInit() {
     this.movieApiService.getMovieList().subscribe((data : any) => {
        this.movies= data.results ;
-      console.log(this.movies); 
     });
   }
 }

@@ -1,3 +1,44 @@
 .card-wrapper{
-    width: 99%;
+    width: 95%;
+}
+
+.movie-overview{
+    height: 5.4rem;
+    line-height: 1.8rem;
+    overflow: hidden;
+}
+
+.card-body{
+    width: 100%;
+}
+
+.card-img{
+    width: 100%;
+}
+
+.watchListed{
+    color: #ffe353;
+}
+
+.brokenHeart{
+    color: rgb(206, 207, 208);
+    font-size: 10rem;
+}
+
+.backHome{
+    background-color: #ffe353;
+}
+
+.backHome:hover{
+    background-color: #c4ac35;
+}
+
+@media (min-width:992px){
+    .card-body{
+        width: 60%;
+    }
+    
+    .card-img{
+        width: 40%;
+    }
 }

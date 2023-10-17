@@ -10,28 +10,32 @@ export class WatchlistService {
 
   constructor() {}
 
-  getWishlist() {
+  getWatchlist() {
     return this.watchlist.asObservable();
   }
-  getWatchlist(): Movie[] {
-    return this.watchlist.getValue();
+
+  setWatchlist(newWatchlist: Movie[]){
+    this.watchlist.next(newWatchlist);
   }
 
-  toggleWishlist(movieItem: Movie, newWatchlist: Movie[]) {
+  toggleWatchlist(movieItem: Movie, newWatchlist: Movie[]) {
     //movie exist in wishlist?
-    if ( newWatchlist.filter((elem) => {elem.id === movieItem.id; }).length > 0) {
-      movieItem.wishlist = false;
+    if (newWatchlist.filter((elem) => elem.id === movieItem.id).length > 0) {
+      movieItem.watchlist = false;
       newWatchlist = this.removeMovie(movieItem, newWatchlist);
+      // console.log('removed');
     } else {
-      movieItem.wishlist = true;
+      movieItem.watchlist = true;
       newWatchlist.push(movieItem);
+      // console.log('added');
     }
-    this.watchlist.next(newWatchlist);
+    this.setWatchlist(newWatchlist);
+
   }
 
   removeMovie(movieItem: Movie, newWishlist: Movie[]) {
     return newWishlist.filter((elem) => {
-      elem.id != movieItem.id;
-    });
+      return elem.id !== movieItem.id;
+    });    
   }
 }

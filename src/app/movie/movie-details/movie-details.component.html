@@ -6,7 +6,15 @@
                 <img  class="rounded float-right" src="https://image.tmdb.org/t/p/w500{{details.poster_path}}">
             </div>
             <div class=" col-5 p-4">
-                <h2 class="card-title my-2"> {{details.title}}</h2>
+                <div class="d-flex justify-content-between">
+                    <h2 class="card-title my-2"> {{details.title}}</h2>
+                    <button class="btn ms-auto fs-3" (click)="toggleWatchList(details)">
+                        <fa-icon
+                          [icon]="faHeart"
+                          [ngClass]="{ watchListed: details.watchlist, notWatchListed: !details.watchlist}"
+                        ></fa-icon>
+                      </button>
+                </div>
                 <p class="text-muted "> {{details.release_date| date:'mediumDate'}} </p>
                 <div class="d-flex pt-3">
                     <p class="card-text" style="margin-right:15px">star</p>
