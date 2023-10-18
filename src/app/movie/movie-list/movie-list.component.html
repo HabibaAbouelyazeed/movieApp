@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="container header-container">
+    <div class="header-container">
         <h1>Welcome to our movie app</h1>
         <p>Millions of movies, TV shows and people to discover. Explore now.</p>
         <form class="d-flex" role="search">
@@ -8,7 +8,15 @@
           </form>
     </div>
     <h2>Popular Movies</h2>
-    <div class="movie-container">
-           <app-moviecard [movie]="movie" *ngFor="let movie of movies"></app-moviecard>
+    
+    <div >
+       
+        <div class="movie-container">
+            <app-moviecard [movie]="movie" *ngFor="let movie of movies"></app-moviecard>
+     </div>
+      </div>
+      
+    
+      
     </div>
-</div>
+    <app-pagination (pageChange)="onPageChange($event)"></app-pagination>
