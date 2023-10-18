@@ -42,7 +42,7 @@ export class MovieListComponent {
   }
 
   fetchMovies() {
-    // const apiKey = 'a7e6cb75206ba0212cfd560483d20ab1';
+   
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.apiKey}&page=${this.currentPage}`;
 
     this.httpClient.get(url).subscribe((response: any) => {
