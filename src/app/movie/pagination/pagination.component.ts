@@ -16,6 +16,9 @@ export class PaginationComponent {
       this.pageChange.emit(this.currentPage);
     }
   }
+  getRange(totalPages: number): number[] {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
 
   goToPreviousPage() {
     this.goToPage(this.currentPage - 1);

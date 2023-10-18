@@ -1,3 +1,7 @@
 .container{
     margin: auto;
 }
+.active>.page-link{
+    background-color: rgba(255, 227, 83, 1);
+    border: none;
+}
