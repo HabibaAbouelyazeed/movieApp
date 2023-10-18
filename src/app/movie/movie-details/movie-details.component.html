@@ -61,17 +61,17 @@
 </section>
 
 <section class=" py-5" *ngIf="details">
-    <div class="container  divIcon" *ngIf="recommendations">
+    <div class="container  divIcon" *ngIf="recommendations && recommendations.length > 0">
         <h2 class="mb-3">Recommendations</h2>
-        <div class="d-flex ">
+        <div class="d-flex">
             <div class="card-deck col-2" *ngFor="let item of recommendations.slice(0,6)">
                 <div class=" card me-3 border-0">
-                    <div class=" card-body">
-                        <div>
+                    <div class="card-body">
+                        <div class="position-relative mb-3">
                             <img src="https://image.tmdb.org/t/p/w500{{item.poster_path}}" style="border-radius: 15px;"
                                 class=" img-fluid mb-2">
+                                <span class="ratingIcon position-absolute">{{item.vote_average | number:'1.1-1'}}</span>
                         </div>
-                        <span class="icon ">{{item.vote_average}}</span>
                         <h6 class="mt-2">{{item.title}}</h6>
                         <p class="text-muted">{{item.release_date | date:'mediumDate'}}</p>
                     </div>

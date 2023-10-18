@@ -2,25 +2,23 @@
     list-style: none;
     text-decoration: none;
 }
-.divIcon {
-    position: relative
-}
 
-
-.icon {
-    position: absolute;
-    bottom:30%;
-    left: 25%;
-    transform: translateX(-50%);
-    background: #106eea;
+.ratingIcon {
+    bottom: -5%;
+    left: 10%;
+    color: white;
+    background: black;
     color: #fff;
-    width: 45px;
-    height: 40px;
-    line-height: 0;
-    border-radius: 20px;
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    line-height: 2rem;
+    border-radius: 50%;
     border: 3px solid #fff;
     display: inline-flex;
-    align-items: center;}
+    align-items: center;
+    justify-content: center;
+}
 
 
 img{width: 100%;height: auto;}

@@ -14,7 +14,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 export class MovieDetailsComponent {
   faStar = faStar;
   details!: Movie;
-  recommendations!: any;
+  recommendations!: Movie[];
   faHeart = faHeart;
   watchlist!: Movie[];
 
@@ -44,11 +44,11 @@ export class MovieDetailsComponent {
       (error) => console.log(error)
     );
 
-    if (this.watchlist.filter((elem) => elem.id === this.details.id).length > 0){
-      this.details.watchlist = true;
-    } else {
-      this.details.watchlist = false;
-    }
+    // if (this.watchlist.filter((elem) => elem.id === this.details.id).length > 0){
+    //   this.details.watchlist = true;
+    // } else {
+    //   this.details.watchlist = false;
+    // }
   }
 
   toggleWatchList(movie: Movie) {
