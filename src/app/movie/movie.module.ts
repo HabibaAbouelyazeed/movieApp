@@ -10,6 +10,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchDisplayComponent } from './search-display/search-display.component';
+import { RateToPercentPipe } from '../shared/pipe/rate-to-percent.pipe';
 
 
 
@@ -22,6 +23,7 @@ import { SearchDisplayComponent } from './search-display/search-display.componen
     WatchListComponent,
     PaginationComponent,
     SearchDisplayComponent,
+    RateToPercentPipe,
   ],
   imports: [
     CommonModule,

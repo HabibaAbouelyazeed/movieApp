@@ -24,8 +24,6 @@ export class MovieListComponent {
     private paginationService: PaginationService,
     private httpClient: HttpClient,
     private router: Router,
-
-
   ) {}
 
   ngOnInit() {
