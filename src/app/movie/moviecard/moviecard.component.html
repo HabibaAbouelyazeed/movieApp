@@ -1,8 +1,19 @@
 <div class="card">
-  <figure (click)="sendIdToDetails(movie.id)">
-    <img [src]="environment.imgurl + movie.poster_path" class="card-img-top" />
+  <figure (click)="sendIdToDetails(movie.id)" class="position-relative">
+    <img [src]="environment.imgurl + movie.poster_path" class="card-img-top img-fluid" />
     <div class="overlay">
-      <p><a >Show details...</a></p>
+      <p><a>Show details...</a></p>
+    </div>
+    <div class="ratingIcon position-absolute">
+      <div *ngIf="movie.vote_average > 7.5; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <circle-progress [percent]="movie.vote_average | rateToPercent" [outerStrokeColor]="'#21d07a'"
+          [innerStrokeColor]="'#21d07a'" [animationDuration]="300"></circle-progress>
+      </ng-template>
+      <ng-template #elseBlock>
+        <circle-progress [percent]="movie.vote_average | rateToPercent" [outerStrokeColor]="'#ffe353'"
+          [innerStrokeColor]="'#ffe353'"></circle-progress>
+      </ng-template>
     </div>
   </figure>
   <div class="card-body d-flex flex-column justify-content-between">

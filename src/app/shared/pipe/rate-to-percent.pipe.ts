@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RateToPercentPipe implements PipeTransform {
 
-  transform(value: number): string {
-    return (value * 10).toFixed(0) + '%';
+  transform(value: number): number {
+    return +(value * 10).toFixed(0);
   }
 
 }

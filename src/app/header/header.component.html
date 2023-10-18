@@ -2,9 +2,12 @@
     <div class="container">
         <a class="navbar-brand" routerLink="">Movie App</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button routerLink="/watchlist" class="btn">
+            <button routerLink="/watchlist" class="btn position-relative">
                 Watchlist
                 <fa-icon [icon]="faHeart" class="ms-1"></fa-icon> 
+                <div *ngIf="watchList.length > 0" class="listCount position-absolute top-0">
+                    <span class="px-1">{{watchList.length}}</span>
+                </div>
             </button>
         </div>
     </div>

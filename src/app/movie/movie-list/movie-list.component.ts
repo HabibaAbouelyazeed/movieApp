@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MovieApiService } from '../../shared/service/movie-api.service';
+import { environment } from 'src/environments/environment';
 import { Movie } from 'src/app/shared/interface/movie';
 import { PaginationService } from '../../pagination.service';
+import { MovieApiService } from '../../shared/service/movie-api.service';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -16,8 +16,6 @@ export class MovieListComponent {
   pageSize: number = 10;
   movies!: Movie[];
   inputValue!: string;
-  filteredMovies!: Movie[];
-  searchResult: string = '';
 
   constructor(
     private movieApiService: MovieApiService,
@@ -27,31 +25,31 @@ export class MovieListComponent {
   ) {}
 
   ngOnInit() {
-    this.movieApiService.getMovieList().subscribe((data: any) => {
-      this.movies = data.results;
-      this.filteredMovies = data.results;
-    });
+    this.movieApiService.getMovieList().subscribe(
+      (data: any) => this.movies = data.results,
+      (error) => console.log(error)
+      );
     this.getData();
     this.fetchMovies();
   }
   getData(): void {
     this.paginationService
       .fetchData(this.currentPage, this.pageSize)
-      .subscribe((response) => {
-        this.movies = response.data;
-        this.filteredMovies = response.data;
-      });
+      .subscribe(
+        (response) => this.movies = response.data,
+        (error) => console.log(error)
+        );
   }
 
   fetchMovies() {
-   
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.apiKey}&page=${this.currentPage}`;
 
-    this.httpClient.get(url).subscribe((response: any) => {
-      this.movies = response.results;
-      this.filteredMovies = response.results;
-    });
+    this.httpClient.get(url).subscribe(
+      (response: any) => this.movies = response.results,
+      (error) => console.log(error)
+      );
   }
+
   onPageChange(page: number) {
     this.currentPage = page;
     this.fetchMovies();
@@ -59,19 +57,5 @@ export class MovieListComponent {
 
   search() {
       this.router.navigate(['searchDisplay',this.inputValue]);
-     
-    
-  //   if (this.inputValue.trim()) {
-  //     this.searchResult = this.inputValue;
-  //     let filter = this.movies.filter((card: Movie) =>
-  //       card.title.toLowerCase().includes(this.inputValue.toLowerCase())
-  //     );
-  //     this.filteredMovies = filter;
-  //     this.inputValue = '';
-  //   } else {
-  //     this.filteredMovies = this.movies;
-  //     this.inputValue = '';
-  //     this.searchResult = '';
-  //   }
   }
 }

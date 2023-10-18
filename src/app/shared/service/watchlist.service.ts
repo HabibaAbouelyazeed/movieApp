@@ -23,14 +23,11 @@ export class WatchlistService {
     if (newWatchlist.filter((elem) => elem.id === movieItem.id).length > 0) {
       movieItem.watchlist = false;
       newWatchlist = this.removeMovie(movieItem, newWatchlist);
-      // console.log('removed');
     } else {
       movieItem.watchlist = true;
       newWatchlist.push(movieItem);
-      // console.log('added');
     }
     this.setWatchlist(newWatchlist);
-
   }
 
   removeMovie(movieItem: Movie, newWishlist: Movie[]) {

@@ -1,4 +1,4 @@
-<div class="container" *ngIf="filteredMovies">
+<div class="container" *ngIf="movies">
     <div class="header-container">
         <h1>Welcome to our movie app</h1>
         <p>Millions of movies, TV shows and people to discover. Explore now.</p>
@@ -6,11 +6,10 @@
             <input  [(ngModel)]="inputValue"  class="form-control me-2" type="text"  placeholder="Search and explore" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
         </div>
-        <div *ngIf="searchResult" class="mt-3">Showing search results for: <span class="fw-bold">{{searchResult}}</span></div>
     </div>
     <h2 class="my-5">Popular Movies</h2>
     <div class="movie-container row">
-        <app-moviecard class="col-12 col-md-4 col-lg-2" [movie]="movie" *ngFor="let movie of filteredMovies"></app-moviecard>
+        <app-moviecard class="col-12 col-md-4 col-lg-2" [movie]="movie" *ngFor="let movie of movies"></app-moviecard>
     </div>
 
     <div class="row justify-content-center">

@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchDisplayComponent } from './search-display/search-display.component';
 import { RateToPercentPipe } from '../shared/pipe/rate-to-percent.pipe';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 
@@ -31,6 +31,19 @@ import { RateToPercentPipe } from '../shared/pipe/rate-to-percent.pipe';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    NgCircleProgressModule.forRoot({
+      radius: 25,
+      outerStrokeWidth: 5,
+      innerStrokeWidth: 1,
+      outerStrokeColor: "white",
+      innerStrokeColor: "black",
+      animation: true,
+      animationDuration: 300,
+      showSubtitle: false,
+      backgroundColor: 'black',
+      unitsColor: 'white',
+      titleColor: 'white'
+    })
   ],
   exports: [
     MovieListComponent,

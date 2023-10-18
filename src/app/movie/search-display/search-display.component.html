@@ -1,11 +1,12 @@
 <div class="container">
     <div class="d-flex  py-5" role="search">
-        <input  [(ngModel)]="searchdisplayvalue"  class="form-control me-2" type="text"  placeholder="Search and explore" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" (click)="searchToValue()">Search</button>
+        <input  [(ngModel)]="searchDisplayValue"  class="form-control me-2" type="text"  placeholder="Search and explore" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" (click)="searchToValue(searchDisplayValue)">Search</button>
+        
     </div>
     <div class="movie-container row">
-        <app-moviecard class="col-12 col-md-4 col-lg-2" *ngFor="let value of searchValue" [movie]="value"
-           ></app-moviecard>
+        <p class="col-12 fw-bold">Showing results for: <span class="fw-normal">{{showingValue}}</span></p>
+        <app-moviecard class="col-12 col-md-4 col-lg-2" *ngFor="let value of searchResult" [movie]="value"></app-moviecard>
     </div>
 
 </div>

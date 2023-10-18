@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { WatchListComponent } from '../movie/watch-list/watch-list.component';
+import { WatchlistService } from '../shared/service/watchlist.service';
+import { Movie } from '../shared/interface/movie';
 
 
 @Component({
@@ -10,4 +12,14 @@ import { WatchListComponent } from '../movie/watch-list/watch-list.component';
 })
 export class HeaderComponent {
   faHeart = faHeart;
+  watchList !: Movie[];
+
+  constructor(private watchListService: WatchlistService){}
+
+  ngOnInit(){
+    this.watchListService.getWatchlist().subscribe(
+      (data) => this.watchList = data,
+      (error) => console.log(error)
+    )
+  }
 }
