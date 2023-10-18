@@ -4,8 +4,7 @@ import { Movie } from 'src/app/shared/interface/movie';
 import { MovieApiService } from 'src/app/shared/service/movie-api.service';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { WatchlistService } from 'src/app/shared/service/watchlist.service';
-import {faStar} from '@fortawesome/free-solid-svg-icons'
-
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-movie-details',
@@ -14,10 +13,10 @@ import {faStar} from '@fortawesome/free-solid-svg-icons'
 })
 export class MovieDetailsComponent {
   faStar = faStar;
-  details!: any;
+  details!: Movie;
   recommendations!: any;
   faHeart = faHeart;
-  watchlist !: Movie[];
+  watchlist!: Movie[];
 
   constructor(
     private movieApiService: MovieApiService,
@@ -26,21 +25,34 @@ export class MovieDetailsComponent {
   ) {}
 
   ngOnInit() {
-    console.log(this.activatedRoute.snapshot);
-    console.log(this.activatedRoute.snapshot.params);
-    this.movieApiService.getDetails(this.activatedRoute.snapshot.params
-      ['id']).subscribe((data) => (this.details = data));
-
-      this.movieApiService.getRecomendation(this.activatedRoute.snapshot.params['id']).subscribe((data) =>this.recommendations=data.results );
-      
-      this.watchListService.getWatchlist().subscribe(
-        (data) => this.watchlist = data,
+    this.movieApiService
+      .getDetails(this.activatedRoute.snapshot.params['id'])
+      .subscribe(
+        (data) => (this.details = data),
         (error) => console.log(error)
       );
+
+    this.movieApiService
+      .getRecomendation(this.activatedRoute.snapshot.params['id'])
+      .subscribe(
+        (data) => (this.recommendations = data.results),
+        (error) => console.log(error)
+      );
+
+    this.watchListService.getWatchlist().subscribe(
+      (data) => (this.watchlist = data),
+      (error) => console.log(error)
+    );
+
+    if (this.watchlist.filter((elem) => elem.id === this.details.id).length > 0){
+      this.details.watchlist = true;
+    } else {
+      this.details.watchlist = false;
+    }
   }
+
   toggleWatchList(movie: Movie) {
-    this.watchListService.toggleWatchlist(movie, this.watchlist)
+    this.watchListService.toggleWatchlist(movie, this.watchlist);
   }
+
 }
-
-

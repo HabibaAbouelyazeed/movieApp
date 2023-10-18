@@ -21,19 +21,3 @@
     margin-left: 20px;
     padding: 15px 36px;
 }
-.container h2{
-    font-weight: 600;
-    font-size: 32px;
-    margin: 62px 0 32px;
-}
-.movie-container{
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-app-moviecard{
-    width: 15.8%;
-    margin: 0 10px 20px 0;
-}
-
-

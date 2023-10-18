@@ -6,21 +6,14 @@
             <input  [(ngModel)]="inputValue"  class="form-control me-2" type="text"  placeholder="Search and explore" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
         </div>
+        <div *ngIf="searchResult" class="mt-3">Showing search results for: <span class="fw-bold">{{searchResult}}</span></div>
     </div>
-    <h2>Popular Movies</h2>
-    
-    <div >
-       
-        <div class="movie-container">
-            <app-moviecard [movie]="movie" *ngFor="let movie of movies"></app-moviecard>
-     </div>
-      </div>
-      
-    
-      
+    <h2 class="my-5">Popular Movies</h2>
+    <div class="movie-container row">
+        <app-moviecard class="col-12 col-md-4 col-lg-2" [movie]="movie" *ngFor="let movie of filteredMovies"></app-moviecard>
     </div>
-<<<<<<< HEAD
-    <app-pagination (pageChange)="onPageChange($event)"></app-pagination>
-=======
+
+    <div class="row justify-content-center">
+        <app-pagination (pageChange)="onPageChange($event)" class="col-2 mx-auto"></app-pagination>
+    </div>
 </div>
->>>>>>> 4e1bff6f65a68ddc0f645b46a0e819d4e1042633

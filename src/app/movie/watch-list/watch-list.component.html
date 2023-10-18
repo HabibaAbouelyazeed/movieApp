@@ -18,7 +18,7 @@
                             <fa-icon [icon]="faHeart" class="fs-4" [ngClass]="{'watchListed':movie.watchlist}"></fa-icon>
                         </button>
                     </header>
-                    <p class="mx-2 text-black-50">{{movie.release_date}}</p>
+                    <p class="mx-2 text-black-50">{{movie.release_date | date}}</p>
                     <div class="rating d-flex">
                         <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 1}"></fa-icon> </span>
                         <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 3}"></fa-icon> </span>

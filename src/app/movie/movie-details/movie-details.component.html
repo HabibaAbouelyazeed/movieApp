@@ -1,5 +1,4 @@
-
-<section class=" py-5">
+<section class=" py-5" *ngIf="details">
     <div class="container ">
         <div class="d-flex align-items-center">
             <div class=" col-5  mx-5">
@@ -11,7 +10,8 @@
                     <button class="btn ms-auto fs-3" (click)="toggleWatchList(details)">
                         <fa-icon
                           [icon]="faHeart"
-                          [ngClass]="{ watchListed: details.watchlist, notWatchListed: !details.watchlist}"
+                          class="tgleBtn"
+                          [ngClass]="{watchListed: details.watchlist}"
                         ></fa-icon>
                       </button>
                 </div>
@@ -60,8 +60,8 @@
     </div>
 </section>
 
-<section class=" py-5">
-    <div class="container  divIcon" *ngIf="recommendations!=''">
+<section class=" py-5" *ngIf="details">
+    <div class="container  divIcon" *ngIf="recommendations">
         <h2 class="mb-3">Recommendations</h2>
         <div class="d-flex ">
             <div class="card-deck col-2" *ngFor="let item of recommendations.slice(0,6)">

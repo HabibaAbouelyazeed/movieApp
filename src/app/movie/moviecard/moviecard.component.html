@@ -1,17 +1,16 @@
-<div class="card" (click)="sendIdToDetails(movie.id)">
-  <figure>
+<div class="card">
+  <figure (click)="sendIdToDetails(movie.id)">
     <img [src]="environment.imgurl + movie.poster_path" class="card-img-top" />
     <div class="overlay">
       <p><a >Show details...</a></p>
     </div>
   </figure>
   <div class="card-body">
-    <h6 class="card-text">{{ movie.title }}</h6>
-    <p>
+    <h6 class="card-text">{{movie.title}}</h6>
+    <p class="d-flex align-items-center justify-content-between">
       {{ movie.release_date | date }}
       <button class="btn" (click)="toggleWatchList()">
-        <fa-icon
-          [icon]="faHeart" [ngClass]="{ watchListed: movie.watchlist }"></fa-icon>
+        <fa-icon [icon]="faHeart" class="fs-5" [ngClass]="{ watchListed: movie.watchlist }"></fa-icon>
       </button>
     </p>
   </div>

@@ -10,14 +10,13 @@ export class MovieApiService {
   api_key= environment.apiKey;
   constructor(private httpClient: HttpClient) { }
   getMovieList() {
-    
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${this.api_key}`; 
     return this.httpClient.get<Movie[]>(apiUrl);
   }
 
 
   getDetails (id: string) {
-    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.api_key}`)
+    return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.api_key}`)
   }
 
   
