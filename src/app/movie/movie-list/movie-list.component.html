@@ -2,10 +2,10 @@
     <div class="header-container">
         <h1>Welcome to our movie app</h1>
         <p>Millions of movies, TV shows and people to discover. Explore now.</p>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search and explore" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+       <div class="d-flex" role="search">
+            <input  [(ngModel)]="inputValue"  class="form-control me-2" type="text"  placeholder="Search and explore" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
+        </div>
     </div>
     <h2>Popular Movies</h2>
     
@@ -19,4 +19,8 @@
     
       
     </div>
+<<<<<<< HEAD
     <app-pagination (pageChange)="onPageChange($event)"></app-pagination>
+=======
+</div>
+>>>>>>> 4e1bff6f65a68ddc0f645b46a0e819d4e1042633

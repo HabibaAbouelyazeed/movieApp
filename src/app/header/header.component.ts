@@ -10,5 +10,4 @@ import { WatchListComponent } from '../movie/watch-list/watch-list.component';
 })
 export class HeaderComponent {
   faHeart = faHeart;
-  
 }

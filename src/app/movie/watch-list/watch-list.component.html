@@ -1,29 +1,33 @@
 <div class="container py-5">
     <h2>Watch List</h2>
-    <div class="row py-5">
-        <div class="col-12 col-md-6 mb-5 mx-auto">
-            <article class="card-wrapper d-flex flex-column flex-md-row shadow rounded-3 p-4">
+    <div class="row mt-5 py-5">
+        <div class="col-12 fs-4 text-center" *ngIf="watchlist.length === 0">
+            <fa-icon [icon]="faHeartBroken" class="brokenHeart"></fa-icon>
+            <p>No movies in watchlist</p>
+            <button class="btn backHome px-3" routerLink="/">Back to home</button>
+            </div>
+        <div class="col-12 col-md-6 mb-5"  *ngFor="let movie of watchlist">
+            <article class="card-wrapper d-flex flex-column flex-md-row shadow rounded-3 p-4 gap-2">
                 <div class="card-img rounded-3">
-                    <img src="" class="img-fluid" alt="movie img">
+                    <img [src]="environment.imgurl + movie.poster_path" class="img-fluid" alt="movie img">
                 </div>
                 <div class="card-body mt-3 mt-md-0">
                     <header class="d-flex justify-content-between">
-                        <h3>Movie Name</h3>
-                        <fa-icon [icon]="faHeart" class="fs-4"></fa-icon>
+                        <h3>{{movie.title}}</h3>
+                        <button class="btn" (click)="removeMovie(movie)">
+                            <fa-icon [icon]="faHeart" class="fs-4" [ngClass]="{'watchListed':movie.watchlist}"></fa-icon>
+                        </button>
                     </header>
-                    <p class="mx-2 text-black-50">Date</p>
+                    <p class="mx-2 text-black-50">{{movie.release_date}}</p>
                     <div class="rating d-flex">
-                        <span><fa-icon [icon]="faStar"></fa-icon> </span>
-                        <span><fa-icon [icon]="faStar"></fa-icon> </span>
-                        <span><fa-icon [icon]="faStar"></fa-icon> </span>
-                        <span><fa-icon [icon]="faStar"></fa-icon> </span>
-                        <span><fa-icon [icon]="faStar"></fa-icon> </span>
-                        <span class="ms-2">ratings num</span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 1}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 3}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 5}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 7}"></fa-icon> </span>
+                        <span><fa-icon [icon]="faStar" [ngClass]="{'watchListed': movie.vote_average > 9}"></fa-icon> </span>
+                        <span class="ms-2">{{movie.vote_count}}</span>
                     </div>
-
-                    <p class="my-3">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia et obcaecati iure dolore accusantium rerum eum veniam beatae iste blanditiis cumque ratione maiores cum dignissimos debitis, hic commodi ut quaerat.
-                    </p>
+                    <p class="my-3 movie-overview">{{movie.overview}}</p>
                 </div>
             </article> 
         </div>

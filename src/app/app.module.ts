@@ -10,12 +10,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MovieApiService } from './shared/service/movie-api.service';
+// import { MovieApiService } from './shared/service/movie-api.service';
 import { HttpClientModule } from '@angular/common/http';
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4e1bff6f65a68ddc0f645b46a0e819d4e1042633
 @NgModule({
   declarations: [
     AppComponent,

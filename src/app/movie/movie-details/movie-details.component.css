@@ -6,22 +6,29 @@
     position: relative
 }
 
+
 .icon {
     position: absolute;
-    bottom: 140px;
-    left: 30%;
+    bottom:30%;
+    left: 25%;
     transform: translateX(-50%);
     background: #106eea;
     color: #fff;
-    width: 40px;
+    width: 45px;
     height: 40px;
     line-height: 0;
     border-radius: 20px;
-    border: 5px solid #fff;
+    border: 3px solid #fff;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
+    align-items: center;}
 
 
 img{width: 100%;height: auto;}
+
+.notWatchListed{
+    color: rgb(206, 207, 208);
+}
+
+.watchListed{
+    color: #ffe353;
+}
