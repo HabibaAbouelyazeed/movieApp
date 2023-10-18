@@ -23,6 +23,9 @@ export class MovieApiService {
   getRecomendation (id: string) {
     return this.httpClient.get<any>(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.api_key}`)
   }
-  // https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}
+
+  getSearch (MovieName: string,) {
+    return this.httpClient.get<any>(`https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&query=${MovieName}`)
+  }
 }
 
