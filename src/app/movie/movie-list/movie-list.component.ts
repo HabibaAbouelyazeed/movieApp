@@ -4,6 +4,7 @@ import { Movie } from 'src/app/shared/interface/movie';
 import { PaginationService } from '../../pagination.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -21,7 +22,10 @@ export class MovieListComponent {
   constructor(
     private movieApiService: MovieApiService,
     private paginationService: PaginationService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router: Router,
+
+
   ) {}
 
   ngOnInit() {
@@ -56,17 +60,20 @@ export class MovieListComponent {
   }
 
   search() {
-    if (this.inputValue.trim()) {
-      this.searchResult = this.inputValue;
-      let filter = this.movies.filter((card: Movie) =>
-        card.title.toLowerCase().includes(this.inputValue.toLowerCase())
-      );
-      this.filteredMovies = filter;
-      this.inputValue = '';
-    } else {
-      this.filteredMovies = this.movies;
-      this.inputValue = '';
-      this.searchResult = '';
-    }
+      this.router.navigate(['searchDisplay',this.inputValue]);
+     
+    
+  //   if (this.inputValue.trim()) {
+  //     this.searchResult = this.inputValue;
+  //     let filter = this.movies.filter((card: Movie) =>
+  //       card.title.toLowerCase().includes(this.inputValue.toLowerCase())
+  //     );
+  //     this.filteredMovies = filter;
+  //     this.inputValue = '';
+  //   } else {
+  //     this.filteredMovies = this.movies;
+  //     this.inputValue = '';
+  //     this.searchResult = '';
+  //   }
   }
 }

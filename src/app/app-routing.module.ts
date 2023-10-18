@@ -4,6 +4,7 @@ import { MovieListComponent } from './movie/movie-list/movie-list.component';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { WatchListComponent } from './movie/watch-list/watch-list.component';
+import { SearchDisplayComponent } from './movie/search-display/search-display.component';
 
 const routes: Routes = [
   {
@@ -19,9 +20,14 @@ const routes: Routes = [
     component: WatchListComponent,
   },
   {
+    path: "searchDisplay/:MovieName",
+    component: SearchDisplayComponent,
+  },
+  {
     path: "**",
     component: NotFoundPageComponent,
   }
+
 ];
 
 @NgModule({

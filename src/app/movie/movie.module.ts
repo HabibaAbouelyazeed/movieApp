@@ -9,6 +9,7 @@ import { WatchListComponent } from './watch-list/watch-list.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SearchDisplayComponent } from './search-display/search-display.component';
 
 
 
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     MoviecardComponent,
     WatchListComponent,
     PaginationComponent,
+    SearchDisplayComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,8 @@ import { FormsModule } from '@angular/forms';
     MovieDetailsComponent,
     MoviecardComponent,
     WatchListComponent,
+    SearchDisplayComponent,
+
   ],
 })
 
